@@ -46,7 +46,7 @@ public class SceneManagerExample : MonoBehaviour
         {
             if (targetScene == SceneManager.GetActiveScene())
             {
-                warningTextMesh.text = "Unload current scene will destroy your GameObjects";
+                warningTextMesh.text = "Unload current scene will destroy your GameObjects !";
             }
             else
             {
