@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class SceneTrigger : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SceneTrigger : MonoBehaviour
 
     void OnMouseDown()
     {
+        StartCoroutine(ClickAnimation());
         switch (triggerType)
         {
             case (TriggerType.LoadScene):
@@ -22,4 +24,10 @@ public class SceneTrigger : MonoBehaviour
         }
     }
 
+    IEnumerator ClickAnimation()
+    {
+        transform.localScale = Vector3.one * .45f;
+        yield return new WaitForSeconds(.1f);
+        transform.localScale = Vector3.one * .5f;
+    }
 }
